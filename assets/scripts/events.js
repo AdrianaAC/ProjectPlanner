@@ -1,19 +1,22 @@
 const button = document.querySelector("button");
+const div = document.querySelector("div");
+let countingClick = 0;
 
 // button.onclick = function() {
-    // console.log("clicked");
+// console.log("clicked");
 // };
 
-const buttonClickHandler = () => {alert("clicked twice once!")};
+const buttonClickHandler = () => {
+  console.log("click");
+};
 
 // button.onclick = buttonClickHandler;
 
-button.addEventListener("dblclick", buttonClickHandler);
+button.addEventListener("click", buttonClickHandler);
 
-setTimeout(() => {
-  button.removeEventListener("dblclick", buttonClickHandler);
-}, 5000);
+const clickerCounter = () => {
+  countingClick ++;
+  console.log(countingClick);
+};
 
-const secondBtn = () => {alert("dbl click twice")};
-
-button.addEventListener("dblclick", secondBtn)
+div.addEventListener("click", clickerCounter);
